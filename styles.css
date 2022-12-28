@@ -11,6 +11,7 @@
     /* justify-content: center;
     align-items: center; */
     margin-left:450px;
+    border:none;
 }
 
 div{
@@ -23,6 +24,7 @@ div{
     border-color:black;
     border:thin solid;
 }
+
 div.hover{
     background-color: black;
 }
