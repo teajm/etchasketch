@@ -23,3 +23,6 @@ div{
     border-color:black;
     border:thin solid;
 }
+div.hover{
+    background-color: black;
+}
