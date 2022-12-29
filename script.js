@@ -4,7 +4,7 @@ let cols = 16;
 let height = 34.0625;
 let width = 34.0625;
 let windowSize = 575;
-let color = 'rgb';
+let color = 'black';
 // const div = document.createElement('div');
 grid.style.setProperty('--grid-rows', rows);
 grid.style.setProperty('--grid-cols', cols);
@@ -56,6 +56,7 @@ rgbButton.addEventListener('click', function(){
 });
 
 const blackButton = document.querySelector('#black');
+blackButton.classList.add('active');
 blackButton.addEventListener('click', function(){
     rgbButton.classList.remove('active');
     resetButton.classList.remove('active');

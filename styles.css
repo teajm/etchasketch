@@ -97,6 +97,7 @@ button:hover{
     -webkit-transition: .5s;
     transition: opacity .5s;
     box-shadow: 5px 5px 1px #89C4E1;
+    border:#000000;
 }
 .slider:hover{
     transition:.5s;
