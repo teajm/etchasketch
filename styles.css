@@ -45,8 +45,15 @@ h1{
 .cell.hover{
     background-color: black;
 }
-
+#value{
+    font-weight: bold;
+    padding-right:4px;
+}
 .slidecontainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width:25%;
     border:none;
 }
@@ -65,11 +72,18 @@ button{
     justify-content: center;
     width: 80px;
     font-size: 15px;
-    background-color: white;
+    background-color: hsl(0, 0%, 100%);
     box-shadow: 5px 5px 1px #89C4E1;
     outline: none;
 }
-
+button:hover{
+    transition:.5s;
+    background-color: #e4e4e4;
+}
+.active{
+    background-color: #e4e4e4;
+    box-shadow: 5px 5px 1px #000000;
+}
 .slider{
     -webkit-appearance: none;
     appearance:none;
@@ -80,12 +94,14 @@ button{
     outline: none;
     border-radius:16px;
     opacity:.8;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    box-shadow: 10px 10px 1px #89C4E1;
+    -webkit-transition: .5s;
+    transition: opacity .5s;
+    box-shadow: 5px 5px 1px #89C4E1;
 }
 .slider:hover{
+    transition:.5s;
     opacity:1;
+    box-shadow:5px 5px 1px #000000;
 }
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */

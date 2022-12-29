@@ -11,8 +11,8 @@ grid.style.setProperty('--grid-cols', cols);
 grid.style.setProperty('--height', height + 'px');
 grid.style.setProperty('--width', width + 'px');
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
+let slider = document.getElementById("myRange");
+let output = document.getElementById("value");
 
 // Update the current slider value (each time you drag the slider handle)
 
@@ -45,6 +45,9 @@ function setColor(event){
 
 const rgbButton = document.querySelector('#rgb');
 rgbButton.addEventListener('click', function(){
+    resetButton.classList.remove('active');
+    blackButton.classList.remove('active');
+    rgbButton.classList.add('active');
     color = 'rgb';
     // let cell = grid.children;
     // for (let i = 0; i < rows*cols; i++) {
@@ -54,6 +57,9 @@ rgbButton.addEventListener('click', function(){
 
 const blackButton = document.querySelector('#black');
 blackButton.addEventListener('click', function(){
+    rgbButton.classList.remove('active');
+    resetButton.classList.remove('active');
+    blackButton.classList.add('active');
     color = 'black';
     // let cell = grid.children;
     // for (let i = 0; i < rows*cols; i++) {
@@ -63,14 +69,17 @@ blackButton.addEventListener('click', function(){
 
 const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', function(){
+    resetButton.classList.add('active');
     let cell = grid.children;
     for(let i = 0; i < rows*cols; i++){
         cell[i].style.backgroundColor = '#e4e4e4';
     }
+    resetButton.classList.remove('active');
 });
 slider.oninput = function() {
     rows = this.value;
     cols = rows;
+    output.innerHTML = this.value;
     removeAllChildNodes(grid);
     height = windowSize / (rows);
     height = height - 2;
