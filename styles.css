@@ -1,29 +1,39 @@
 :root{
     --grid-cols: 1;
     --grid-rows: 1;
+    --height: 16px;
+    --width: 16px;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
 }
 #grid { 
     display:flex;
-    display: grid; 
+    display: inline-grid; 
     /* grid-gap:1em; */
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 2fr);
+    grid-template-columns: repeat(var(--grid-cols), 2fr);
     /* justify-content: center;
     align-items: center; */
-    margin-left:450px;
+    /* margin-left:450px; */
     border:none;
-    max-width: 960px;
+    height: 575px;
+    width: 575px;
+    background-color:rgb(228, 228, 228);
+    box-shadow:10px 10px 5px;
 }
 
 div{
     display:flex;
-    height:16px;
-    width:16px;
-    align-items: center;
-    justify-content: center;
-    border-style:solid;
+    height:var(--height);
+    width:var(--width);
+    border-style:solid; 
     border-color:black;
     border:thin solid;
+    border: 1px solid black;
 }
 
 div.hover{
@@ -31,17 +41,21 @@ div.hover{
 }
 .slidecontainer{
     width:100%;
+    border:none;
 }
 .slider{
     -webkit-appearance: none;
     appearance:none;
-    width:100%;
+    border:none;
+    width:30%;
     height:25px;
-    background: #d3d3d3;
+    background: #ffffff;
     outline: none;
-    opacity:0.7;
+    border-radius:16px;
+    opacity:.8;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    box-shadow: 10px 10px 5px;
 }
 .slider:hover{
     opacity:1;
@@ -51,8 +65,14 @@ div.hover{
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
+    border-radius: 50%;
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    opacity:.8;
+  }
+  .slider::-webkit-slider-thumb:hover {
+    opacity:1;
+    
   }
   
   .slider::-moz-range-thumb {
@@ -60,4 +80,5 @@ div.hover{
     height: 25px; /* Slider handle height */
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;
   }
