@@ -19,6 +19,7 @@ var output = document.getElementById("demo");
 function createGrid(rows,cols){
     for(let i = 0; i < rows*cols; i++){
             const div = document.createElement('div');
+            div.classList.add('cell');
             // div.textContent = "a";
             grid.appendChild(div);
             div.addEventListener('mouseover', () => setColor(event));
@@ -41,25 +42,32 @@ function setColor(event){
         event.target.style.backgroundColor = genHexColor();
     }
 }
-const rgbButton = document.querySelector('#rgb');
 
+const rgbButton = document.querySelector('#rgb');
 rgbButton.addEventListener('click', function(){
     color = 'rgb';
-    let cell = grid.children;
-    for (let i = 0; i < rows*cols; i++) {
-        cell[i].style.backgroundColor = '#e4e4e4';
-    }
+    // let cell = grid.children;
+    // for (let i = 0; i < rows*cols; i++) {
+    //     cell[i].style.backgroundColor = '#e4e4e4';
+    // }
 });
 
 const blackButton = document.querySelector('#black');
 blackButton.addEventListener('click', function(){
     color = 'black';
+    // let cell = grid.children;
+    // for (let i = 0; i < rows*cols; i++) {
+    //     cell[i].style.backgroundColor = '#e4e4e4';
+    // }
+});
+
+const resetButton = document.querySelector('#reset');
+resetButton.addEventListener('click', function(){
     let cell = grid.children;
-    for (let i = 0; i < rows*cols; i++) {
+    for(let i = 0; i < rows*cols; i++){
         cell[i].style.backgroundColor = '#e4e4e4';
     }
 });
-
 slider.oninput = function() {
     rows = this.value;
     cols = rows;

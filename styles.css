@@ -5,10 +5,15 @@
     --width: 16px;
 }
 body{
+    font-family: monospace;
     display:flex;
     justify-content: center;
     align-items:center;
     flex-direction: column;
+    background-color: #F5EDCE;
+}
+h1{
+    margin-top:15px;
 }
 #grid { 
     display:flex;
@@ -22,11 +27,13 @@ body{
     border:none;
     height: 575px;
     width: 575px;
-    background-color:rgb(228, 228, 228);
-    box-shadow:10px 10px 5px;
+    background-color:#e4e4e4;
+    box-shadow:10px 10px 1px #89C4E1;
 }
 
-div{
+
+
+.cell{
     display:flex;
     height:var(--height);
     width:var(--width);
@@ -35,19 +42,39 @@ div{
     border:thin solid;
     border: 1px solid black;
 }
-
-div.hover{
+.cell.hover{
     background-color: black;
 }
+
 .slidecontainer{
-    width:100%;
+    width:25%;
     border:none;
 }
+#btns{
+    display:flex;
+    justify-content: space-between;
+    border:none;
+    width:575px;
+    margin-bottom:20px;
+    margin-top:10px;
+}
+button{
+    font-family: monospace;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width: 80px;
+    font-size: 15px;
+    background-color: white;
+    box-shadow: 5px 5px 1px #89C4E1;
+    outline: none;
+}
+
 .slider{
     -webkit-appearance: none;
     appearance:none;
     border:none;
-    width:30%;
+    width:100%;
     height:25px;
     background: #ffffff;
     outline: none;
@@ -55,7 +82,7 @@ div.hover{
     opacity:.8;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    box-shadow: 10px 10px 5px;
+    box-shadow: 10px 10px 1px #89C4E1;
 }
 .slider:hover{
     opacity:1;
@@ -66,7 +93,7 @@ div.hover{
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
     border-radius: 50%;
-    background: #04AA6D; /* Green background */
+    background: #58287F; /* Green background */
     cursor: pointer; /* Cursor on hover */
     opacity:.8;
   }
@@ -78,7 +105,7 @@ div.hover{
   .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    background: #58287F; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 50%;
   }
